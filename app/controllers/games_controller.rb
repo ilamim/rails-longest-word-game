@@ -4,5 +4,6 @@ class GamesController < ApplicationController
   end
 
   def score
+    @message = "TEST"
   end
 end
