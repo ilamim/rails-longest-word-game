@@ -6,6 +6,7 @@
 <% end %></h1>
     <form action="/score" method="post" data-turbo="false">
       <input type="text" name="user_word" value="<%= params[:word] %>" placeholder="Try out your guess">
+      <input class="d-none" type="text" name="attempt_grid" value="<%= @grid.join() %>">
       <input type="submit" type="button" class="btn btn-dark" value="WORD">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     </form>
