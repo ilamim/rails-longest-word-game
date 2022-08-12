@@ -3,7 +3,9 @@ require 'json'
 
 class GamesController < ApplicationController
   def new
-    @grid = Array.new(10) { ('A'..'Z').to_a.sample }
+    grid_vowels = Array.new(3) { ['A', 'E', 'I', 'O', 'U'].sample }
+    grid_all = Array.new(7) { ('A'..'Z').to_a.sample }
+    @grid = (grid_vowels + grid_all).shuffle
   end
 
   def valid_attempt?(attempt)
